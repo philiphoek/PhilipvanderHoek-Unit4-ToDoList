@@ -65,6 +65,7 @@ class ToDoTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
+        // Save changes
         guard segue.identifier == "saveUnwind" else { return }
         let sourceViewController = segue.source as! ToDoViewController
         
@@ -83,6 +84,7 @@ class ToDoTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Show details when clicked on cell
         if segue.identifier == "showDetails" {
             let todoViewController = segue.destination
                 as! ToDoViewController

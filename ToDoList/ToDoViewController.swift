@@ -49,6 +49,7 @@ class ToDoViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // Fix right heights for cells
         let normalCellHeight = CGFloat(44)
         let largeCellHeight = CGFloat(200)
         
@@ -66,6 +67,7 @@ class ToDoViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath) {
+            // Code for showing date picker
         case [0,1]:
             isPickerHidden = !isPickerHidden
             
@@ -80,6 +82,7 @@ class ToDoViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Check if save button was clicked
         super.prepare(for: segue, sender: sender)
         
         guard segue.identifier == "saveUnwind" else { return }
