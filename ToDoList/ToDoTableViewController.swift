@@ -10,11 +10,7 @@ import UIKit
 
 class ToDoTableViewController: UITableViewController {
     
-    
-    
     var todos = [ToDo]()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +32,11 @@ class ToDoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt
         // Setting up view controller
         indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:
-            "ToDoCellIdentifier") as? ToDoCell else {
-                fatalError("Could not dequeue a cell")
+        guard let cell =
+            tableView.dequeueReusableCell(withIdentifier:
+                "ToDoCellIdentifier") else {
+                    fatalError("Could not dequeue a cell")
         }
-        
         
         let todo = todos[indexPath.row]
         cell.textLabel?.text = todo.title
