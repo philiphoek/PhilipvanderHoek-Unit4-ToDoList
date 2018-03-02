@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="zDI-9w-rf4" kind="showDetail" identifier="showDetails" id="4Lb-1z-zLF"/>
+                                    <segue destination="zDI-9w-rf4" kind="show" identifier="showDetails" id="GRe-gL-lyK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -239,6 +239,6 @@
         <image name="Unchecked" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Lb-1z-zLF"/>
+        <segue reference="GRe-gL-lyK"/>
     </inferredMetricsTieBreakers>
 </document>
