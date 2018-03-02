@@ -19,12 +19,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="qdW-q2-YpO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="qdW-q2-YpO" customClass="ToDoCell" customModule="ToDoList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qdW-q2-YpO" id="w6t-AD-mSj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhl-rt-KBI">
+                                            <rect key="frame" x="8" y="3" width="36" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="36" id="Omd-uw-ybC"/>
+                                                <constraint firstAttribute="height" constant="36" id="m99-0B-vMv"/>
+                                            </constraints>
+                                            <state key="normal" image="Unchecked"/>
+                                            <state key="selected" image="Checked"/>
+                                            <state key="highlighted" image="Checked"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsO-om-eDV">
+                                            <rect key="frame" x="52" y="11" width="299" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="HsO-om-eDV" secondAttribute="trailing" constant="8" id="FTJ-AM-yEL"/>
+                                        <constraint firstItem="HsO-om-eDV" firstAttribute="centerY" secondItem="w6t-AD-mSj" secondAttribute="centerY" id="haR-Z6-RQH"/>
+                                        <constraint firstItem="HsO-om-eDV" firstAttribute="leading" secondItem="Mhl-rt-KBI" secondAttribute="trailing" constant="8" id="l9A-nh-yis"/>
+                                        <constraint firstItem="Mhl-rt-KBI" firstAttribute="centerY" secondItem="w6t-AD-mSj" secondAttribute="centerY" id="lyW-Up-nRF"/>
+                                        <constraint firstItem="Mhl-rt-KBI" firstAttribute="leading" secondItem="w6t-AD-mSj" secondAttribute="leading" constant="8" id="p4g-5u-CPh"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="zDI-9w-rf4" kind="show" identifier="showDetails" id="GRe-gL-lyK"/>

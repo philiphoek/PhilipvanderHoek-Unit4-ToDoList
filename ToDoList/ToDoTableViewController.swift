@@ -34,12 +34,16 @@ class ToDoTableViewController: UITableViewController {
         indexPath: IndexPath) -> UITableViewCell {
         guard let cell =
             tableView.dequeueReusableCell(withIdentifier:
-                "ToDoCellIdentifier") else {
+                "ToDoCellIdentifier") as? ToDoCell else {
                     fatalError("Could not dequeue a cell")
         }
         
+        let titleLabel = cell.viewWithTag(10) as! UILabel
+        let isCompleteButton = cell.viewWithTag(5) as! UIButton
+        
         let todo = todos[indexPath.row]
-        cell.textLabel?.text = todo.title
+        titleLabel.text = todo.title
+        isCompleteButton.isSelected = todo.isComplete
         return cell
     }
     
@@ -85,4 +89,5 @@ class ToDoTableViewController: UITableViewController {
             todoViewController.todo = selectedTodo
         }
     }
+    
 }
